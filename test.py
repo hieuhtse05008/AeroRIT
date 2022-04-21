@@ -4,6 +4,31 @@
 Created on Wed Jul 10 22:56:02 2019
 
 @author: aneesh
+
+60
+Overall accuracy = 91.69%
+Average Accuracy = 85.06%
+Mean IOU is 68.02
+Mean DICE score is 78.67
+
+100
+Overall accuracy = 91.88%
+Average Accuracy = 77.67%
+Mean IOU is 62.13
+Mean DICE score is 73.10
+
+Val Epoch: 69
+41.67-83.33-125.00-166.67-VAL: 70 loss: 0.409
+Overall acc  = 0.894, MPCA = 0.690, mIOU = 0.589
+Time elapsed:
+Time elapsed 6:33:36.597782
+
+
+Val Epoch: 59
+41.67-83.33-125.00-166.67-VAL: 60 loss: 0.442
+Overall acc  = 0.894, MPCA = 0.684, mIOU = 0.580
+Time elapsed:
+Time elapsed 0:25:52.287061
 """
 
 import os
@@ -58,7 +83,7 @@ if __name__ == "__main__":
     args.use_mini = True
     # args.use_SE = True
     # args.use_preluSE = True
-    args.network_weights_path = 'savedmodels/unetm.pt'
+    # args.network_weights_path = 'savedmodels/unetm.pt'
     
     if args.use_cuda and torch.cuda.is_available():
         device = 'cuda'
@@ -98,7 +123,7 @@ if __name__ == "__main__":
             net = unet(args.bands, 6)
     else:
         raise NotImplementedError('required parameter not found in dictionary')
-
+    print(args.network_weights_path)
     net.load_state_dict(torch.load(args.network_weights_path))
     net.eval()
     net.to(device)

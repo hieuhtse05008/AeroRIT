@@ -4,4 +4,6 @@ savedmodels/*
 !savedmodels/README.md
 __pycache__/
 *.pyc
-
+Aerial Data
+savedmodels
+.idea

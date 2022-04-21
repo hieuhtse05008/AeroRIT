@@ -40,11 +40,15 @@ def weights_init_xavier(net):
 def weights_init_kaiming(net):
     for m in net.modules():
         if isinstance(m, nn.Conv2d):
+            # print(1)
             init.kaiming_normal_(m.weight.data, a=0, mode='fan_in')
         elif isinstance(m, nn.BatchNorm2d):
-            init.uniform_(m.weight.data, 1.0, 0.02)
+            # print(2)
+            # init.uniform_(m.weight.data, 1.0, 0.02)
+            init.uniform_(m.weight.data, 0.02, 1.0)
             init.constant_(m.bias.data, 0.0)
         elif isinstance(m, nn.Linear):
+            # print(3)
             init.kaiming_normal_(m.weight.data, a=0, mode='fan_in')
 
 def init_weights(net, init_type='normal'):
