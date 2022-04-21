@@ -32,6 +32,7 @@ import argparse
 # Define a manual seed to help reproduce identical results
 torch.manual_seed(3108)
 
+os.environ["CUDA_VISIBLE_DEVICES"] = "7"
 
 def train(epoch=0):
     global trainloss
