@@ -1,5 +1,5 @@
-Aerial\Data/*
-!Aerial\Data/README.md
+Aerial Data/*
+!Aerial Data/README.md
 savedmodels/*
 !savedmodels/README.md
 __pycache__/
