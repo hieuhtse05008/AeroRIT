@@ -1,0 +1,13 @@
+bands: 51
+hsi_c: rad
+
+network_arch: unet
+
+
+resnet_blocks: 6
+
+network_weights_path: savedmodels/train-segnet.pt
+
+use_cuda: True
+batch_size: 100
+epochs: 60
