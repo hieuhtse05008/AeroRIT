@@ -6,6 +6,7 @@ Created on Wed Jul  3 17:12:08 2019
 @author: aneesh
 """
 
+from cProfile import label
 import os
 import os.path as osp
 import numpy as np
@@ -84,7 +85,7 @@ if __name__ == "__main__":
     image_hsi_ref = np.transpose(image_hsi_ref, [1,2,0])[53:,7:,:]
     
     labels = io.imread(osp.join(folder_dir, 'image_labels.tif'))[53:,7:,:]
-    
+    print(labels)
 ###############################################################################
     
     image1_rgb = image_rgb[:,:1728,:]

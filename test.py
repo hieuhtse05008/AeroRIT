@@ -11,11 +11,7 @@ Average Accuracy = 85.06%
 Mean IOU is 68.02
 Mean DICE score is 78.67
 
-100
-Overall accuracy = 91.88%
-Average Accuracy = 77.67%
-Mean IOU is 62.13
-Mean DICE score is 73.10
+
 
 Val Epoch: 69
 41.67-83.33-125.00-166.67-VAL: 70 loss: 0.409
@@ -29,6 +25,19 @@ Val Epoch: 59
 Overall acc  = 0.894, MPCA = 0.684, mIOU = 0.580
 Time elapsed:
 Time elapsed 0:25:52.287061
+
+100-resnet
+Overall accuracy = 91.88%
+Average Accuracy = 77.67%
+Mean IOU is 62.13
+Mean DICE score is 73.10
+
+eval-unetm
+Val Epoch: 59
+41.67-83.33-125.00-VAL: 60 loss: 0.514
+Overall acc  = 0.890, MPCA = 0.691, mIOU = 0.566
+Time elapsed:
+Time elapsed 0:49:31.674426
 """
 
 import os

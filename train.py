@@ -32,13 +32,13 @@ import argparse
 # Define a manual seed to help reproduce identical results
 torch.manual_seed(3108)
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "7"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 def train(epoch=0):
     global trainloss
     trainloss2 = AverageMeter()
 
-    print('\nTrain Epoch: %d' % epoch)
+    print('\nTrain Epoch: {}'.format(epoch+1))
 
     net.train()
 
@@ -57,9 +57,9 @@ def train(epoch=0):
 
         running_loss += loss.item()
         trainloss2.update(loss.item(), N)
-
+        print('[Epoch %d, Batch %5d] loss: %.3f' % (epoch + 1, idx + 1, running_loss / 5))
         if (idx + 1) % 5 == 0:
-            print('[Epoch %d, Batch %5d] loss: %.3f' % (epoch + 1, idx + 1, running_loss / 5))
+            # print('[Epoch %d, Batch %5d] loss: %.3f' % (epoch + 1, idx + 1, running_loss / 5))
             running_loss = 0.0
 
     trainloss.append(trainloss2.avg)
@@ -71,7 +71,7 @@ def val(epoch=0):
     truth = []
     pred = []
 
-    print('\nVal Epoch: %d' % epoch)
+    print('\nVal Epoch: {}'.format(epoch+1))
 
     net.eval()
 
@@ -188,7 +188,7 @@ if __name__ == "__main__":
     # Pre-computed weights using median frequency balancing
     weights = [1.11, 0.37, 0.56, 4.22, 6.77, 1.0]
     weights = torch.FloatTensor(weights)
-
+    print(torch.cuda.is_available())
     criterion = cross_entropy2d(reduction='mean', weight=weights.cuda(), ignore_index=5)
 
     if args.network_arch == 'resnet':
