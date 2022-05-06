@@ -38,6 +38,23 @@ Val Epoch: 59
 Overall acc  = 0.890, MPCA = 0.691, mIOU = 0.566
 Time elapsed:
 Time elapsed 0:49:31.674426
+
+
+unet
+Val Epoch: 60
+41.67-83.33-125.00-VAL: 60 loss: 0.517
+Overall acc  = 0.894, MPCA = 0.686, mIOU = 0.573
+Time elapsed:
+Time elapsed 1:54:40.862010
+
+segnet
+41.67-83.33-125.00-VAL: 60 loss: 1.030
+Overall acc  = 0.891, MPCA = 0.675, mIOU = 0.557
+Time elapsed 1:46:15.967450
+Overall accuracy = 92.31%
+Average Accuracy = 84.94%
+Mean IOU is 66.24
+Mean DICE score is 77.10
 """
 
 import os

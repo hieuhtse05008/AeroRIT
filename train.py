@@ -230,5 +230,4 @@ if __name__ == "__main__":
             bestmiou = mIOU
             torch.save(net.state_dict(), args.network_weights_path)
     time_elapsed = datetime.now() - start_time
-    print("Time elapsed: ")
     print('Time elapsed {}'.format(time_elapsed))
