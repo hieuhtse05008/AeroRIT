@@ -1,0 +1,7 @@
+bands: 51
+hsi_c: rad
+network_arch: unet
+network_weights_path: savedmodels/all.pt
+resnet_blocks: 6
+use_cuda: True
+use_mini: True
