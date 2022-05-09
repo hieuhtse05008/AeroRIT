@@ -85,7 +85,8 @@ def val(epoch=0):
 
             outputs = net(hsi_ip.to(device))
 
-            loss = criterion(outputs, labels.to(device))
+            # loss = criterion(outputs, labels.to(device))
+            loss = criterion(outputs,True)
 
             valloss_fx += loss.item()
 
@@ -191,7 +192,7 @@ if __name__ == "__main__":
     weights = torch.FloatTensor(weights)
     print(torch.cuda.is_available())
     # criterion = cross_entropy2d(reduction='mean', weight=weights.cuda(), ignore_index=5)
-    criterion = GANLoss('vanilla')
+    criterion = GANLoss('wgangp')
     print(criterion)
     if args.network_arch == 'resnet':
         net = ResnetGenerator(args.bands, 6, n_blocks=args.resnet_blocks)
