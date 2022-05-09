@@ -85,8 +85,8 @@ def val(epoch=0):
 
             outputs = net(hsi_ip.to(device))
 
-            loss = criterion(outputs, labels.to(device))
-            # loss = criterion(outputs,False)
+            # loss = criterion(outputs, labels.to(device))
+            loss = criterion(outputs,False)
 
             valloss_fx += loss.item()
 
