@@ -193,7 +193,7 @@ if __name__ == "__main__":
     print(torch.cuda.is_available())
     # criterion = cross_entropy2d(reduction='mean', weight=weights.cuda(), ignore_index=5)
     criterion = GANLoss('wgangp')
-    print(criterion)
+
     if args.network_arch == 'resnet':
         net = ResnetGenerator(args.bands, 6, n_blocks=args.resnet_blocks)
     elif args.network_arch == 'segnet':
