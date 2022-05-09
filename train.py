@@ -52,17 +52,17 @@ def train(epoch=0):
         outputs = net(hsi_ip.to(device))
 
         loss = criterion(outputs, labels.to(device))
+        # loss.backward()
+        # optimizer.step()
+        # running_loss += loss.item()
+        # trainloss2.update(loss.item(), N)
+
+        # loss = criterion(outputs,True)
         loss.backward()
         optimizer.step()
         running_loss += loss.item()
         trainloss2.update(loss.item(), N)
 
-        loss = criterion(outputs,True)
-        loss.backward()
-        optimizer.step()
-        running_loss += loss.item()
-        trainloss2.update(loss.item(), N)
-        
         print('[Epoch %d, Batch %5d] loss: %.3f' % (epoch + 1, idx + 1, running_loss / 5))
         if (idx + 1) % 5 == 0:
             # print('[Epoch %d, Batch %5d] loss: %.3f' % (epoch + 1, idx + 1, running_loss / 5))
@@ -90,8 +90,8 @@ def val(epoch=0):
 
             outputs = net(hsi_ip.to(device))
 
-            # loss = criterion(outputs, labels.to(device))
-            loss = criterion(outputs,False)
+            loss = criterion(outputs, labels.to(device))
+            # loss = criterion(outputs,False)
 
             valloss_fx += loss.item()
 
@@ -196,8 +196,8 @@ if __name__ == "__main__":
     weights = [1.11, 0.37, 0.56, 4.22, 6.77, 1.0]
     weights = torch.FloatTensor(weights)
     print(torch.cuda.is_available())
-    # criterion = cross_entropy2d(reduction='mean', weight=weights.cuda(), ignore_index=5)
-    criterion = GANLoss('wgangp')
+    criterion = cross_entropy2d(reduction='mean', weight=weights.cuda(), ignore_index=5)
+    # criterion = GANLoss('wgangp')
     print(criterion)
     if args.network_arch == 'resnet':
         net = ResnetGenerator(args.bands, 6, n_blocks=args.resnet_blocks)
@@ -230,8 +230,9 @@ if __name__ == "__main__":
     bestmiou = 0
 
     for epoch in range(args.epochs):
-        scheduler.step()
+        
         train(epoch)
+        scheduler.step()
         oa, mpca, mIOU, _, _ = val(epoch)
         print('Overall acc  = {:.3f}, MPCA = {:.3f}, mIOU = {:.3f}'.format(oa, mpca, mIOU))
         if mIOU > bestmiou:
