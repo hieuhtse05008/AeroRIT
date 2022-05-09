@@ -51,13 +51,18 @@ def train(epoch=0):
 
         outputs = net(hsi_ip.to(device))
 
-        # loss = criterion(outputs, labels.to(device))
+        loss = criterion(outputs, labels.to(device))
+        loss.backward()
+        optimizer.step()
+        running_loss += loss.item()
+        trainloss2.update(loss.item(), N)
+
         loss = criterion(outputs,True)
         loss.backward()
         optimizer.step()
-
         running_loss += loss.item()
         trainloss2.update(loss.item(), N)
+        
         print('[Epoch %d, Batch %5d] loss: %.3f' % (epoch + 1, idx + 1, running_loss / 5))
         if (idx + 1) % 5 == 0:
             # print('[Epoch %d, Batch %5d] loss: %.3f' % (epoch + 1, idx + 1, running_loss / 5))
