@@ -52,7 +52,7 @@ def train(epoch=0):
         outputs = net(hsi_ip.to(device))
 
         # loss = criterion(outputs, labels.to(device))
-        loss = criterion(outputs,True)
+        loss = criterion(outputs,False)
         loss.backward()
         optimizer.step()
         running_loss += loss.item()
@@ -86,7 +86,7 @@ def val(epoch=0):
             outputs = net(hsi_ip.to(device))
 
             # loss = criterion(outputs, labels.to(device))
-            loss = criterion(outputs,False)
+            loss = criterion(outputs,True)
 
             valloss_fx += loss.item()
 
