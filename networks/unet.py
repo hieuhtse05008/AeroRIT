@@ -182,8 +182,8 @@ class unetm(nn.Module):
         self.use_SE = use_SE
         self.use_PReLU = use_PReLU
 
-        filters = [64, 128, 256, 512, 1024]
-#        filters = [128, 256, 512, 1024, 1024]
+        # filters = [64, 128, 256, 512, 1024]
+        filters = [128, 256, 512, 1024, 1024]
         filters = [int(x / self.feature_scale) for x in filters]
         
         # downsampling
