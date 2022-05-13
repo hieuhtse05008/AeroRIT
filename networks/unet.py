@@ -193,9 +193,13 @@ class unetm(nn.Module):
         self.conv2 = unetConv2(filters[0], filters[1], self.is_batchnorm, use_se = self.use_SE, use_prelu = self.use_PReLU)
         self.maxpool2 = nn.MaxPool2d(kernel_size=2)
 
-        self.center = unetConv2(filters[1], filters[2], self.is_batchnorm, use_se = self.use_SE, use_prelu = self.use_PReLU)
+        self.conv3 = unetConv2(filters[1], filters[2], self.is_batchnorm, use_se = self.use_SE, use_prelu = self.use_PReLU)
+        self.maxpool3 = nn.MaxPool2d(kernel_size=2)
+
+        self.center = unetConv2(filters[2], filters[3], self.is_batchnorm, use_se = self.use_SE, use_prelu = self.use_PReLU)
 
         # upsampling
+        self.up_concat3 = unetUp(filters[3], filters[2], self.is_deconv)
         self.up_concat2 = unetUp(filters[2], filters[1], self.is_deconv)
         self.up_concat1 = unetUp(filters[1], filters[0], self.is_deconv)
 
@@ -210,10 +214,15 @@ class unetm(nn.Module):
         conv2 = self.conv2(maxpool1)
         maxpool2 = self.maxpool2(conv2)
 
-        center = self.center(maxpool2)
-        up2 = self.up_concat2(conv2, center)
+        conv3 = self.conv3(maxpool2)
+        maxpool3 = self.maxpool3(conv3)
+
+        center = self.center(maxpool3)
+        up3 = self.up_concat3(conv3, center)
+        up2 = self.up_concat2(conv2, up3)
         up1 = self.up_concat1(conv1, up2)
 
+        
         final = self.final(up1)
 
         return final
