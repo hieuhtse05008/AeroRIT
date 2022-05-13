@@ -106,7 +106,7 @@ if __name__ == "__main__":
     args = parse_args(parser)
     print(args)
     
-    args.use_mini = True
+    # args.use_mini = True
     # args.use_SE = True
     # args.use_preluSE = True
     # args.network_weights_path = 'savedmodels/unetm.pt'
