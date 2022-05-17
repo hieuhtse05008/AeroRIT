@@ -144,10 +144,10 @@ if __name__ == "__main__":
 
     ### Pretrained representation present?
     parser.add_argument('--pretrained_weights', default=None, help='Path to pretrained weights for network')
-
+   
     args = parse_args(parser)
     print(args)
-
+    exit()
     if args.use_cuda and torch.cuda.is_available():
         device = 'cuda'
     else:

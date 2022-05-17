@@ -236,7 +236,6 @@ def parse_args(parser):
         data = yaml.safe_load(open(args.config_file))
         delattr(args, 'config_file')
         arg_dict = args.__dict__
-#        print (data)
         for key, value in data.items():
             if isinstance(value, list):
                 for v in value:
