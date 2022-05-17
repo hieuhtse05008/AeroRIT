@@ -147,7 +147,7 @@ if __name__ == "__main__":
    
     args = parse_args(parser)
     print(args)
-    exit()
+    # exit()
     if args.use_cuda and torch.cuda.is_available():
         device = 'cuda'
     else:
