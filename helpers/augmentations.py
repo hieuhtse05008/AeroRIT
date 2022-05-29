@@ -21,6 +21,7 @@ class RandomHorizontallyFlip(object):
         self.p = p
     
     def __call__(self, img, hsi, mask):
+        # print(img)
         if random.random() < self.p:
             return (cv2.flip(img, 0), cv2.flip(hsi, 0), cv2.flip(mask, 0))
         return img, hsi, mask

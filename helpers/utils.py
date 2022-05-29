@@ -150,7 +150,8 @@ class AeroCLoader(data.Dataset):
         rgb = rgb[:,:,::-1]
         
         hsi = np.load(osp.join(self.working_dir, self.hsi_dir, self.filelist[index] + '.npy'))
-                
+        # print(osp.join(self.working_dir, self.hsi_dir, self.filelist[index] + '.npy'))
+        # print(np.shape(hsi))
         
         if self.hsi_mode == 'visible':
             hsi = hsi[:,:,0:31]
@@ -169,6 +170,7 @@ class AeroCLoader(data.Dataset):
         label = label[:,:,::-1]
         
         if self.augmentations is not None:
+            # print(hsi)
             rgb, hsi, label = self.augmentations(rgb, hsi, label)
         
         if self.transforms is not None:

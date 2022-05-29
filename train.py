@@ -183,7 +183,7 @@ if __name__ == "__main__":
                            hsi_sign=args.hsi_c, hsi_mode=hsi_mode, transforms=tx, augs=augs_tx)
     valset = AeroCLoader(set_loc='mid', set_type='test', size='small', \
                          hsi_sign=args.hsi_c, hsi_mode=hsi_mode, transforms=tx)
-
+    
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=args.batch_size, shuffle=True)
     valloader = torch.utils.data.DataLoader(valset, batch_size=args.batch_size, shuffle=False)
 
