@@ -1,0 +1,7 @@
+bands: 51
+hsi_c: ref
+network_arch: resnet
+network_weights_path: savedmodels/resnet_ref.pt
+resnet_blocks: 6
+use_cuda: True
+use_augs: True
