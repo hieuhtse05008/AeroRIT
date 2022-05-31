@@ -1,5 +1,5 @@
 bands: 51
-hsi_c: rad
+hsi_c: ref
 
 network_arch: segnet
 resnet_blocks: 6
@@ -7,5 +7,4 @@ mini: False
 network_weights_path: savedmodels/train-segnet.pt
 
 use_cuda: True
-batch_size: 100
-epochs: 60
+
