@@ -167,7 +167,6 @@ class AeroCLoader(data.Dataset):
         hsi = hsi.astype(np.float32)
         
         label = cv2.imread(osp.join(self.working_dir, self.label_dir, self.filelist[index] + '.tif'))
-        print(label)
         label = label[:,:,::-1]
         
         if self.augmentations is not None:
