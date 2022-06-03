@@ -31,17 +31,70 @@ class cross_entropy2d(object):
     def __call__(self, input, target):
         n, c, h, w = input.size()
         nt, ht, wt = target.size()
-
+        print(input.size())
+        print(target.size())
         # Handle inconsistent size between input and target
         if h != ht and w != wt:  # upsample labels
             input = F.interpolate(input, size=(ht, wt), mode="bilinear", align_corners=True)
     
         input = input.transpose(1, 2).transpose(2, 3).contiguous().view(-1, c)
         target = target.view(-1)
+        
+
         loss = F.cross_entropy(
             input, target, weight=self.weight, reduction=self.reduction, ignore_index=self.ignore_index)
         return loss
+
+class focal_loss(nn.modules.loss._WeightedLoss):
+    def __init__(self, weight=None, gamma=2,reduction='mean'):
+        super(focal_loss, self).__init__(weight,reduction=reduction)
+        self.gamma = gamma
+        self.weight = weight #weight parameter will act as the alpha parameter to balance class weights
+
+    def __call__(self, input, target):
+
+        ce_loss = F.cross_entropy(input, target,reduction=self.reduction,weight=self.weight)
+        pt = torch.exp(-ce_loss)
+        loss = ((1 - pt) ** self.gamma * ce_loss).mean()
+        return loss
+# class focal_loss(object):
+#     def __init__(self,alpha: float = 0.25,gamma: float = 2,reduction: str = "none",):
+#         self.alpha = alpha
+#         self.gamma = gamma
+#         self.reduction = reduction
+#     def __call__(self, input, target):
+#         gamma = self.gamma
+#         alpha = self.alpha
+#         reduction = self.reduction
+#         print(input.size())
+#         print(target.size())
+#         n, c, h, w = input.size()   
+#         nt, ht, wt = target.size()
+
+#         # Handle inconsistent size between input and target
+#         if h != ht and w != wt:  # upsample labels
+#             input = F.interpolate(input, size=(ht, wt), mode="bilinear", align_corners=True)
     
+#         input = input.transpose(1, 2).transpose(2, 3).contiguous().view(-1, c)
+#         target = target.view(-1)
+
+#         p = torch.sigmoid(input)
+#         ce_loss = F.binary_cross_entropy_with_logits(input, target, reduction="none")
+#         p_t = p * target + (1 - p) * (1 - target)
+#         loss = ce_loss * ((1 - p_t) ** gamma)
+
+#         if alpha >= 0:
+#             alpha_t = alpha * target + (1 - alpha) * (1 - target)
+#             loss = alpha_t * loss
+
+#         if reduction == "mean":
+#             loss = loss.mean()
+#         elif reduction == "sum":
+#             loss = loss.sum()
+
+#         return loss
+            
+        
 class GANLoss(nn.Module):
     '''
     The GANLoss class abstracts away the need to create the target label tensor
