@@ -1,0 +1,6 @@
+bands: 51
+hsi_c: rad
+network_arch: unet
+network_weights_path: savedmodels/unet-focal_loss-3.pt
+use_cuda: True
+use_augs: True

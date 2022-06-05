@@ -16,7 +16,7 @@ from datetime import datetime
 from torch import optim
 
 from helpers.augmentations import RandomHorizontallyFlip, RandomVerticallyFlip, \
-    RandomTranspose, Compose
+    RandomTranspose, Compose, RandomRotate
 from helpers.utils import AeroCLoader, AverageMeter, Metrics, parse_args
 from helpers.lossfunctions import GANLoss, cross_entropy2d, focal_loss
 
@@ -58,9 +58,9 @@ def train(epoch=0):
         running_loss += loss.item()
         trainloss2.update(loss.item(), N)
 
-        print('[Epoch %d, Batch %5d] loss: %.3f' % (epoch + 1, idx + 1, running_loss))
+        # print('[Epoch %d, Batch %5d] loss: %.3f' % (epoch + 1, idx + 1, running_loss))
         if (idx + 1) % 5 == 0:
-            # print('[Epoch %d, Batch %5d] loss: %.3f' % (epoch + 1, idx + 1, running_loss / 5))
+            print('[Epoch %d, Batch %5d] loss: %.3f' % (epoch + 1, idx + 1, running_loss / 5))
             running_loss = 0.0
 
     trainloss.append(trainloss2.avg)
@@ -115,7 +115,7 @@ if __name__ == "__main__":
     parser.add_argument('--bands', default=51, help='Which bands category to load \
                         - 3: RGB, 4: RGB + 1 Infrared, 6: RGB + 3 Infrared, 31: Visible, 51: All', type=int)
     parser.add_argument('--hsi_c', default='rad', help='Load HSI Radiance or Reflectance data?')
-    parser.add_argument('--use_augs', action='store_false', help='Use data augmentations?')
+    parser.add_argument('--use_augs', action='store_true', help='Use data augmentations?')
 
     ### 2. Network selections
     ### a. Which network?
@@ -159,6 +159,7 @@ if __name__ == "__main__":
         augs = []
         augs.append(RandomHorizontallyFlip(p=0.5))
         augs.append(RandomVerticallyFlip(p=0.5))
+        # augs.append(RandomRotate(p=0.5))
         augs.append(RandomTranspose(p=1))
         augs_tx = Compose(augs)
     else:
@@ -191,8 +192,8 @@ if __name__ == "__main__":
     weights = [1.11, 0.37, 0.56, 4.22, 6.77, 1.0]
     weights = torch.FloatTensor(weights)
     
-    criterion = focal_loss(weight=weights.cuda())
-    # criterion = cross_entropy2d(reduction='mean', weight=weights.cuda(), ignore_index=5)
+    # criterion = focal_loss(weight=weights.cuda())
+    criterion = cross_entropy2d(reduction='mean', weight=weights.cuda(), ignore_index=5)
     # criterion = GANLoss('wgangp')
 
     if args.network_arch == 'resnet':

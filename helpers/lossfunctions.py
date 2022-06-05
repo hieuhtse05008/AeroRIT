@@ -31,8 +31,8 @@ class cross_entropy2d(object):
     def __call__(self, input, target):
         n, c, h, w = input.size()
         nt, ht, wt = target.size()
-        print(input.size())
-        print(target.size())
+        # print(input.size())
+        # print(target.size())
         # Handle inconsistent size between input and target
         if h != ht and w != wt:  # upsample labels
             input = F.interpolate(input, size=(ht, wt), mode="bilinear", align_corners=True)
@@ -53,7 +53,7 @@ class focal_loss(nn.modules.loss._WeightedLoss):
 
     def __call__(self, input, target):
 
-        ce_loss = F.cross_entropy(input, target,reduction=self.reduction,weight=self.weight)
+        ce_loss = F.cross_entropy(input, target,reduction=self.reduction,weight=self.weight,ignore_index=5)
         pt = torch.exp(-ce_loss)
         loss = ((1 - pt) ** self.gamma * ce_loss).mean()
         return loss

@@ -31,7 +31,10 @@ class ChannelSELayer(nn.Module):
         if act == 'relu':
             self.relu = nn.ReLU()
         elif act == 'prelu':
-            self.relu = nn.PReLU()
+            self.relu = nn.LeakyReLU()
+            # self.relu = nn.ReLU6()
+            # self.relu = nn.RReLU()
+            # self.relu = nn.SiLU()
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, input_tensor):
