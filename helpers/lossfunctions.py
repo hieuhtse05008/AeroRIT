@@ -45,15 +45,26 @@ class cross_entropy2d(object):
             input, target, weight=self.weight, reduction=self.reduction, ignore_index=self.ignore_index)
         return loss
 
-class focal_loss(nn.modules.loss._WeightedLoss):
-    def __init__(self, weight=None, gamma=2,reduction='mean'):
-        super(focal_loss, self).__init__(weight,reduction=reduction)
+# class focal_loss(nn.modules.loss._WeightedLoss):
+class focal_loss(object):
+    def __init__(self, weight=None, gamma=2,reduction='mean',ignore_index=999):
+        # super(focal_loss, self).__init__(weight,reduction=reduction)
+        self.reduction = reduction
         self.gamma = gamma
+        self.ignore_index = ignore_index
         self.weight = weight #weight parameter will act as the alpha parameter to balance class weights
 
     def __call__(self, input, target):
+        n, c, h, w = input.size()
+        nt, ht, wt = target.size()
+        # Handle inconsistent size between input and target
+        if h != ht and w != wt:  # upsample labels
+            input = F.interpolate(input, size=(ht, wt), mode="bilinear", align_corners=True)
+    
+        input = input.transpose(1, 2).transpose(2, 3).contiguous().view(-1, c)
+        target = target.view(-1)
 
-        ce_loss = F.cross_entropy(input, target,reduction=self.reduction,weight=self.weight,ignore_index=5)
+        ce_loss = F.cross_entropy(input, target,reduction=self.reduction,weight=self.weight,ignore_index=self.ignore_index)
         pt = torch.exp(-ce_loss)
         loss = ((1 - pt) ** self.gamma * ce_loss).mean()
         return loss

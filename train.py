@@ -192,7 +192,7 @@ if __name__ == "__main__":
     
     gamma = 0.4+0.2*args.gamma
     print('Gamma: {}'.format(gamma))
-    criterion = focal_loss(weight=weights.cuda(), gamma=gamma)
+    criterion = focal_loss(weight=weights.cuda(), gamma=gamma,ignore_index=5)
     # criterion = cross_entropy2d(reduction='mean', weight=weights.cuda(), ignore_index=5)
     # criterion = GANLoss('wgangp')
 

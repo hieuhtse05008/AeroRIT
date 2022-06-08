@@ -2,7 +2,7 @@
 CUDA_VISIBLE_DEVICES=0
 
 
-for gamma in {4..8..1}
+for gamma in {0..8..1}
 do
     echo "$gamma"
     for id in {1..5..1}

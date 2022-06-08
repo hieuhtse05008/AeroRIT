@@ -5,7 +5,7 @@ Completed loading pretrained network weights...
 Calculating prediction accuracy...
 Statistics on Test set:
 
-Overall accuracy = 89.06%
-Average Accuracy = 86.91%
-Mean IOU is 65.77          
-Mean DICE score is 77.90
+Overall accuracy = 89.49%
+Average Accuracy = 83.71%
+Mean IOU is 66.82          
+Mean DICE score is 78.71
