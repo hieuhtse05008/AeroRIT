@@ -52,7 +52,6 @@ def train(epoch=0):
         outputs = net(hsi_ip.to(device))
 
         loss = criterion(outputs, labels.to(device))
-        # loss = criterion(outputs,False)
         loss.backward()
         optimizer.step()
         running_loss += loss.item()
@@ -80,13 +79,11 @@ def val(epoch=0):
 
     with torch.no_grad():
         for idx, (rgb_ip, hsi_ip, labels) in enumerate(valloader, 0):
-            #        print(idx)
             N = hsi_ip.size(0)
 
             outputs = net(hsi_ip.to(device))
 
             loss = criterion(outputs, labels.to(device))
-            # loss = criterion(outputs,True)
 
             valloss_fx += loss.item()
 
@@ -136,6 +133,7 @@ if __name__ == "__main__":
     parser.add_argument('--use_cuda', action='store_true', help='use GPUs?')
 
     ### Hyperparameters
+    parser.add_argument('--gamma', default=2, type=float, help='Gamma variable in focal loss 0.4+0.2*gamma')
     parser.add_argument('--batch-size', default=100, type=int, help='Number of images sampled per minibatch?')
     parser.add_argument('--init_weights', default='kaiming', help="Choose from: 'normal', 'xavier', 'kaiming'")
     parser.add_argument('--learning-rate', default=1e-4, type=int,
@@ -159,7 +157,7 @@ if __name__ == "__main__":
         augs = []
         augs.append(RandomHorizontallyFlip(p=0.5))
         augs.append(RandomVerticallyFlip(p=0.5))
-        # augs.append(RandomRotate(p=0.5))
+        augs.append(RandomRotate(p=1))
         augs.append(RandomTranspose(p=1))
         augs_tx = Compose(augs)
     else:
@@ -192,8 +190,10 @@ if __name__ == "__main__":
     weights = [1.11, 0.37, 0.56, 4.22, 6.77, 1.0]
     weights = torch.FloatTensor(weights)
     
-    # criterion = focal_loss(weight=weights.cuda())
-    criterion = cross_entropy2d(reduction='mean', weight=weights.cuda(), ignore_index=5)
+    gamma = 0.4+0.2*args.gamma
+    print('Gamma: {}'.format(gamma))
+    criterion = focal_loss(weight=weights.cuda(), gamma=gamma)
+    # criterion = cross_entropy2d(reduction='mean', weight=weights.cuda(), ignore_index=5)
     # criterion = GANLoss('wgangp')
 
     if args.network_arch == 'resnet':

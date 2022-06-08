@@ -69,10 +69,19 @@ class RandomRotate(object):
     '''
     def __init__(self, p):
         self.p = p
-    
+    def rotate_image(self, image, angle):
+        image_center = tuple(np.array(image.shape[1::-1]) / 2)
+        rot_mat = cv2.getRotationMatrix2D(image_center, angle, 1.0)
+        result = cv2.warpAffine(image, rot_mat, image.shape[1::-1], flags=cv2.INTER_LINEAR)
+        return result
+
     def __call__(self, img, hsi, mask):
         if random.random() < self.p:
-            return (cv2.rotate(img,ROTATE_90_COUNTERCLOCKWISE), np.rot90(hsi), cv2.rotate(mask,ROTATE_90_COUNTERCLOCKWISE))
+            return (
+                self.rotate_image(img,12), 
+                self.rotate_image(hsi,12), 
+                self.rotate_image(mask,12)
+                )
         return img, hsi, mask
 
 class Compose(object):

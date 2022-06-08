@@ -1,0 +1,11 @@
+Namespace(bands=51, config_file=None, hsi_c='rad', network_arch='unet', network_weights_path='savedmodels/focal-loss-5-4.pt', resnet_blocks=6, use_SE=True, use_cuda=True, use_mini=True, use_preluSE=True)
+Completed loading data...
+savedmodels/focal-loss-5-4.pt
+Completed loading pretrained network weights...
+Calculating prediction accuracy...
+Statistics on Test set:
+
+Overall accuracy = 89.33%
+Average Accuracy = 86.46%
+Mean IOU is 62.18          
+Mean DICE score is 74.85
