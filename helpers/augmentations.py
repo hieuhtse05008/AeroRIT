@@ -78,9 +78,9 @@ class RandomRotate(object):
     def __call__(self, img, hsi, mask):
         if random.random() < self.p:
             return (
-                self.rotate_image(img,12), 
-                self.rotate_image(hsi,12), 
-                self.rotate_image(mask,12)
+                self.rotate_image(img,8), 
+                self.rotate_image(hsi,8), 
+                self.rotate_image(mask,8)
                 )
         return img, hsi, mask
 
