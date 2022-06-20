@@ -157,8 +157,8 @@ if __name__ == "__main__":
         augs = []
         augs.append(RandomHorizontallyFlip(p=0.5))
         augs.append(RandomVerticallyFlip(p=0.5))
-        #augs.append(RandomRotate(p=1))
-        augs.append(RandomTranspose(p=1))
+        augs.append(RandomRotate(p=1))
+        #augs.append(RandomTranspose(p=1))
         augs_tx = Compose(augs)
     else:
         augs_tx = None

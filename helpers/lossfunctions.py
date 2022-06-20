@@ -41,8 +41,7 @@ class cross_entropy2d(object):
         target = target.view(-1)
         
 
-        loss = F.cross_entropy(
-            input, target, weight=self.weight, reduction=self.reduction, ignore_index=self.ignore_index)
+        loss = F.cross_entropy(input, target, weight=self.weight, reduction=self.reduction, ignore_index=self.ignore_index)
         return loss
 
 # class focal_loss(nn.modules.loss._WeightedLoss):

@@ -1,0 +1,723 @@
+Namespace(bands=51, batch_size=100, config_file=None, epochs=60, gamma=7.0, hsi_c='rad', init_weights='kaiming', learning_rate=0.0001, network_arch='unet', network_weights_path='savedmodels/focal-loss-7-4.pt', pretrained_weights=None, resnet_blocks=6, use_SE=True, use_augs=True, use_cuda=True, use_mini=True, use_preluSE=True)
+Gamma: 1.8000000000000003
+
+Train Epoch: 1
+[Epoch 1, Batch     5] loss: 1.056
+[Epoch 1, Batch    10] loss: 0.653
+[Epoch 1, Batch    15] loss: 0.341
+[Epoch 1, Batch    20] loss: 0.198
+[Epoch 1, Batch    25] loss: 0.124
+[Epoch 1, Batch    30] loss: 0.083
+
+Val Epoch: 1
+41.67-83.33-125.00-VAL: 1 loss: 0.720
+Overall acc  = 0.751, MPCA = 0.429, mIOU = 0.386
+
+Train Epoch: 2
+[Epoch 2, Batch     5] loss: 0.124
+[Epoch 2, Batch    10] loss: 0.069
+[Epoch 2, Batch    15] loss: 0.095
+[Epoch 2, Batch    20] loss: 0.065
+[Epoch 2, Batch    25] loss: 0.049
+[Epoch 2, Batch    30] loss: 0.040
+
+Val Epoch: 2
+41.67-83.33-125.00-VAL: 2 loss: 0.142
+Overall acc  = 0.835, MPCA = 0.666, mIOU = 0.502
+
+Train Epoch: 3
+[Epoch 3, Batch     5] loss: 0.040
+[Epoch 3, Batch    10] loss: 0.033
+[Epoch 3, Batch    15] loss: 0.044
+[Epoch 3, Batch    20] loss: 0.040
+[Epoch 3, Batch    25] loss: 0.037
+[Epoch 3, Batch    30] loss: 0.025
+
+Val Epoch: 3
+41.67-83.33-125.00-VAL: 3 loss: 0.139
+Overall acc  = 0.856, MPCA = 0.656, mIOU = 0.533
+
+Train Epoch: 4
+[Epoch 4, Batch     5] loss: 0.025
+[Epoch 4, Batch    10] loss: 0.019
+[Epoch 4, Batch    15] loss: 0.045
+[Epoch 4, Batch    20] loss: 0.032
+[Epoch 4, Batch    25] loss: 0.037
+[Epoch 4, Batch    30] loss: 0.035
+
+Val Epoch: 4
+41.67-83.33-125.00-VAL: 4 loss: 0.165
+Overall acc  = 0.869, MPCA = 0.593, mIOU = 0.520
+
+Train Epoch: 5
+[Epoch 5, Batch     5] loss: 0.021
+[Epoch 5, Batch    10] loss: 0.020
+[Epoch 5, Batch    15] loss: 0.019
+[Epoch 5, Batch    20] loss: 0.019
+[Epoch 5, Batch    25] loss: 0.019
+[Epoch 5, Batch    30] loss: 0.016
+
+Val Epoch: 5
+41.67-83.33-125.00-VAL: 5 loss: 0.123
+Overall acc  = 0.866, MPCA = 0.673, mIOU = 0.541
+
+Train Epoch: 6
+[Epoch 6, Batch     5] loss: 0.014
+[Epoch 6, Batch    10] loss: 0.016
+[Epoch 6, Batch    15] loss: 0.012
+[Epoch 6, Batch    20] loss: 0.015
+[Epoch 6, Batch    25] loss: 0.015
+[Epoch 6, Batch    30] loss: 0.013
+
+Val Epoch: 6
+41.67-83.33-125.00-VAL: 6 loss: 0.116
+Overall acc  = 0.874, MPCA = 0.678, mIOU = 0.548
+
+Train Epoch: 7
+[Epoch 7, Batch     5] loss: 0.021
+[Epoch 7, Batch    10] loss: 0.015
+[Epoch 7, Batch    15] loss: 0.019
+[Epoch 7, Batch    20] loss: 0.016
+[Epoch 7, Batch    25] loss: 0.014
+[Epoch 7, Batch    30] loss: 0.016
+
+Val Epoch: 7
+41.67-83.33-125.00-VAL: 7 loss: 0.145
+Overall acc  = 0.861, MPCA = 0.683, mIOU = 0.539
+
+Train Epoch: 8
+[Epoch 8, Batch     5] loss: 0.009
+[Epoch 8, Batch    10] loss: 0.011
+[Epoch 8, Batch    15] loss: 0.011
+[Epoch 8, Batch    20] loss: 0.010
+[Epoch 8, Batch    25] loss: 0.012
+[Epoch 8, Batch    30] loss: 0.008
+
+Val Epoch: 8
+41.67-83.33-125.00-VAL: 8 loss: 0.155
+Overall acc  = 0.870, MPCA = 0.670, mIOU = 0.548
+
+Train Epoch: 9
+[Epoch 9, Batch     5] loss: 0.010
+[Epoch 9, Batch    10] loss: 0.022
+[Epoch 9, Batch    15] loss: 0.028
+[Epoch 9, Batch    20] loss: 0.014
+[Epoch 9, Batch    25] loss: 0.021
+[Epoch 9, Batch    30] loss: 0.019
+
+Val Epoch: 9
+41.67-83.33-125.00-VAL: 9 loss: 0.119
+Overall acc  = 0.861, MPCA = 0.679, mIOU = 0.538
+
+Train Epoch: 10
+[Epoch 10, Batch     5] loss: 0.015
+[Epoch 10, Batch    10] loss: 0.011
+[Epoch 10, Batch    15] loss: 0.013
+[Epoch 10, Batch    20] loss: 0.010
+[Epoch 10, Batch    25] loss: 0.011
+[Epoch 10, Batch    30] loss: 0.007
+
+Val Epoch: 10
+41.67-83.33-125.00-VAL: 10 loss: 0.139
+Overall acc  = 0.865, MPCA = 0.692, mIOU = 0.549
+
+Train Epoch: 11
+[Epoch 11, Batch     5] loss: 0.012
+[Epoch 11, Batch    10] loss: 0.007
+[Epoch 11, Batch    15] loss: 0.009
+[Epoch 11, Batch    20] loss: 0.009
+[Epoch 11, Batch    25] loss: 0.008
+[Epoch 11, Batch    30] loss: 0.007
+
+Val Epoch: 11
+41.67-83.33-125.00-VAL: 11 loss: 0.166
+Overall acc  = 0.875, MPCA = 0.685, mIOU = 0.570
+
+Train Epoch: 12
+[Epoch 12, Batch     5] loss: 0.009
+[Epoch 12, Batch    10] loss: 0.007
+[Epoch 12, Batch    15] loss: 0.005
+[Epoch 12, Batch    20] loss: 0.006
+[Epoch 12, Batch    25] loss: 0.006
+[Epoch 12, Batch    30] loss: 0.006
+
+Val Epoch: 12
+41.67-83.33-125.00-VAL: 12 loss: 0.186
+Overall acc  = 0.873, MPCA = 0.685, mIOU = 0.564
+
+Train Epoch: 13
+[Epoch 13, Batch     5] loss: 0.006
+[Epoch 13, Batch    10] loss: 0.005
+[Epoch 13, Batch    15] loss: 0.006
+[Epoch 13, Batch    20] loss: 0.006
+[Epoch 13, Batch    25] loss: 0.006
+[Epoch 13, Batch    30] loss: 0.006
+
+Val Epoch: 13
+41.67-83.33-125.00-VAL: 13 loss: 0.193
+Overall acc  = 0.871, MPCA = 0.689, mIOU = 0.553
+
+Train Epoch: 14
+[Epoch 14, Batch     5] loss: 0.010
+[Epoch 14, Batch    10] loss: 0.007
+[Epoch 14, Batch    15] loss: 0.005
+[Epoch 14, Batch    20] loss: 0.009
+[Epoch 14, Batch    25] loss: 0.006
+[Epoch 14, Batch    30] loss: 0.009
+
+Val Epoch: 14
+41.67-83.33-125.00-VAL: 14 loss: 0.159
+Overall acc  = 0.879, MPCA = 0.670, mIOU = 0.550
+
+Train Epoch: 15
+[Epoch 15, Batch     5] loss: 0.006
+[Epoch 15, Batch    10] loss: 0.006
+[Epoch 15, Batch    15] loss: 0.006
+[Epoch 15, Batch    20] loss: 0.006
+[Epoch 15, Batch    25] loss: 0.006
+[Epoch 15, Batch    30] loss: 0.005
+
+Val Epoch: 15
+41.67-83.33-125.00-VAL: 15 loss: 0.142
+Overall acc  = 0.879, MPCA = 0.698, mIOU = 0.569
+
+Train Epoch: 16
+[Epoch 16, Batch     5] loss: 0.004
+[Epoch 16, Batch    10] loss: 0.004
+[Epoch 16, Batch    15] loss: 0.005
+[Epoch 16, Batch    20] loss: 0.005
+[Epoch 16, Batch    25] loss: 0.004
+[Epoch 16, Batch    30] loss: 0.004
+
+Val Epoch: 16
+41.67-83.33-125.00-VAL: 16 loss: 0.227
+Overall acc  = 0.873, MPCA = 0.673, mIOU = 0.551
+
+Train Epoch: 17
+[Epoch 17, Batch     5] loss: 0.006
+[Epoch 17, Batch    10] loss: 0.007
+[Epoch 17, Batch    15] loss: 0.006
+[Epoch 17, Batch    20] loss: 0.005
+[Epoch 17, Batch    25] loss: 0.006
+[Epoch 17, Batch    30] loss: 0.004
+
+Val Epoch: 17
+41.67-83.33-125.00-VAL: 17 loss: 0.184
+Overall acc  = 0.879, MPCA = 0.678, mIOU = 0.563
+
+Train Epoch: 18
+[Epoch 18, Batch     5] loss: 0.005
+[Epoch 18, Batch    10] loss: 0.006
+[Epoch 18, Batch    15] loss: 0.006
+[Epoch 18, Batch    20] loss: 0.004
+[Epoch 18, Batch    25] loss: 0.004
+[Epoch 18, Batch    30] loss: 0.004
+
+Val Epoch: 18
+41.67-83.33-125.00-VAL: 18 loss: 0.185
+Overall acc  = 0.877, MPCA = 0.690, mIOU = 0.559
+
+Train Epoch: 19
+[Epoch 19, Batch     5] loss: 0.008
+[Epoch 19, Batch    10] loss: 0.034
+[Epoch 19, Batch    15] loss: 0.050
+[Epoch 19, Batch    20] loss: 0.031
+[Epoch 19, Batch    25] loss: 0.077
+[Epoch 19, Batch    30] loss: 0.044
+
+Val Epoch: 19
+41.67-83.33-125.00-VAL: 19 loss: 0.299
+Overall acc  = 0.772, MPCA = 0.586, mIOU = 0.454
+
+Train Epoch: 20
+[Epoch 20, Batch     5] loss: 0.024
+[Epoch 20, Batch    10] loss: 0.016
+[Epoch 20, Batch    15] loss: 0.020
+[Epoch 20, Batch    20] loss: 0.014
+[Epoch 20, Batch    25] loss: 0.012
+[Epoch 20, Batch    30] loss: 0.011
+
+Val Epoch: 20
+41.67-83.33-125.00-VAL: 20 loss: 0.161
+Overall acc  = 0.876, MPCA = 0.681, mIOU = 0.566
+
+Train Epoch: 21
+[Epoch 21, Batch     5] loss: 0.011
+[Epoch 21, Batch    10] loss: 0.011
+[Epoch 21, Batch    15] loss: 0.008
+[Epoch 21, Batch    20] loss: 0.007
+[Epoch 21, Batch    25] loss: 0.010
+[Epoch 21, Batch    30] loss: 0.007
+
+Val Epoch: 21
+41.67-83.33-125.00-VAL: 21 loss: 0.146
+Overall acc  = 0.884, MPCA = 0.687, mIOU = 0.578
+
+Train Epoch: 22
+[Epoch 22, Batch     5] loss: 0.007
+[Epoch 22, Batch    10] loss: 0.008
+[Epoch 22, Batch    15] loss: 0.004
+[Epoch 22, Batch    20] loss: 0.008
+[Epoch 22, Batch    25] loss: 0.006
+[Epoch 22, Batch    30] loss: 0.005
+
+Val Epoch: 22
+41.67-83.33-125.00-VAL: 22 loss: 0.156
+Overall acc  = 0.883, MPCA = 0.673, mIOU = 0.573
+
+Train Epoch: 23
+[Epoch 23, Batch     5] loss: 0.009
+[Epoch 23, Batch    10] loss: 0.005
+[Epoch 23, Batch    15] loss: 0.007
+[Epoch 23, Batch    20] loss: 0.006
+[Epoch 23, Batch    25] loss: 0.004
+[Epoch 23, Batch    30] loss: 0.006
+
+Val Epoch: 23
+41.67-83.33-125.00-VAL: 23 loss: 0.188
+Overall acc  = 0.873, MPCA = 0.684, mIOU = 0.544
+
+Train Epoch: 24
+[Epoch 24, Batch     5] loss: 0.005
+[Epoch 24, Batch    10] loss: 0.004
+[Epoch 24, Batch    15] loss: 0.005
+[Epoch 24, Batch    20] loss: 0.003
+[Epoch 24, Batch    25] loss: 0.006
+[Epoch 24, Batch    30] loss: 0.004
+
+Val Epoch: 24
+41.67-83.33-125.00-VAL: 24 loss: 0.219
+Overall acc  = 0.861, MPCA = 0.656, mIOU = 0.554
+
+Train Epoch: 25
+[Epoch 25, Batch     5] loss: 0.013
+[Epoch 25, Batch    10] loss: 0.007
+[Epoch 25, Batch    15] loss: 0.005
+[Epoch 25, Batch    20] loss: 0.007
+[Epoch 25, Batch    25] loss: 0.007
+[Epoch 25, Batch    30] loss: 0.008
+
+Val Epoch: 25
+41.67-83.33-125.00-VAL: 25 loss: 0.177
+Overall acc  = 0.872, MPCA = 0.701, mIOU = 0.563
+
+Train Epoch: 26
+[Epoch 26, Batch     5] loss: 0.013
+[Epoch 26, Batch    10] loss: 0.007
+[Epoch 26, Batch    15] loss: 0.006
+[Epoch 26, Batch    20] loss: 0.005
+[Epoch 26, Batch    25] loss: 0.004
+[Epoch 26, Batch    30] loss: 0.004
+
+Val Epoch: 26
+41.67-83.33-125.00-VAL: 26 loss: 0.193
+Overall acc  = 0.873, MPCA = 0.674, mIOU = 0.565
+
+Train Epoch: 27
+[Epoch 27, Batch     5] loss: 0.004
+[Epoch 27, Batch    10] loss: 0.004
+[Epoch 27, Batch    15] loss: 0.004
+[Epoch 27, Batch    20] loss: 0.004
+[Epoch 27, Batch    25] loss: 0.003
+[Epoch 27, Batch    30] loss: 0.004
+
+Val Epoch: 27
+41.67-83.33-125.00-VAL: 27 loss: 0.166
+Overall acc  = 0.883, MPCA = 0.699, mIOU = 0.576
+
+Train Epoch: 28
+[Epoch 28, Batch     5] loss: 0.004
+[Epoch 28, Batch    10] loss: 0.012
+[Epoch 28, Batch    15] loss: 0.029
+[Epoch 28, Batch    20] loss: 0.022
+[Epoch 28, Batch    25] loss: 0.010
+[Epoch 28, Batch    30] loss: 0.010
+
+Val Epoch: 28
+41.67-83.33-125.00-VAL: 28 loss: 0.193
+Overall acc  = 0.850, MPCA = 0.637, mIOU = 0.525
+
+Train Epoch: 29
+[Epoch 29, Batch     5] loss: 0.007
+[Epoch 29, Batch    10] loss: 0.009
+[Epoch 29, Batch    15] loss: 0.006
+[Epoch 29, Batch    20] loss: 0.005
+[Epoch 29, Batch    25] loss: 0.006
+[Epoch 29, Batch    30] loss: 0.005
+
+Val Epoch: 29
+41.67-83.33-125.00-VAL: 29 loss: 0.150
+Overall acc  = 0.880, MPCA = 0.664, mIOU = 0.548
+
+Train Epoch: 30
+[Epoch 30, Batch     5] loss: 0.004
+[Epoch 30, Batch    10] loss: 0.004
+[Epoch 30, Batch    15] loss: 0.004
+[Epoch 30, Batch    20] loss: 0.003
+[Epoch 30, Batch    25] loss: 0.004
+[Epoch 30, Batch    30] loss: 0.003
+
+Val Epoch: 30
+41.67-83.33-125.00-VAL: 30 loss: 0.153
+Overall acc  = 0.878, MPCA = 0.677, mIOU = 0.545
+
+Train Epoch: 31
+[Epoch 31, Batch     5] loss: 0.003
+[Epoch 31, Batch    10] loss: 0.004
+[Epoch 31, Batch    15] loss: 0.004
+[Epoch 31, Batch    20] loss: 0.003
+[Epoch 31, Batch    25] loss: 0.004
+[Epoch 31, Batch    30] loss: 0.004
+
+Val Epoch: 31
+41.67-83.33-125.00-VAL: 31 loss: 0.153
+Overall acc  = 0.865, MPCA = 0.684, mIOU = 0.535
+
+Train Epoch: 32
+[Epoch 32, Batch     5] loss: 0.005
+[Epoch 32, Batch    10] loss: 0.006
+[Epoch 32, Batch    15] loss: 0.004
+[Epoch 32, Batch    20] loss: 0.006
+[Epoch 32, Batch    25] loss: 0.004
+[Epoch 32, Batch    30] loss: 0.004
+
+Val Epoch: 32
+41.67-83.33-125.00-VAL: 32 loss: 0.131
+Overall acc  = 0.870, MPCA = 0.689, mIOU = 0.538
+
+Train Epoch: 33
+[Epoch 33, Batch     5] loss: 0.003
+[Epoch 33, Batch    10] loss: 0.003
+[Epoch 33, Batch    15] loss: 0.003
+[Epoch 33, Batch    20] loss: 0.003
+[Epoch 33, Batch    25] loss: 0.003
+[Epoch 33, Batch    30] loss: 0.002
+
+Val Epoch: 33
+41.67-83.33-125.00-VAL: 33 loss: 0.143
+Overall acc  = 0.885, MPCA = 0.668, mIOU = 0.555
+
+Train Epoch: 34
+[Epoch 34, Batch     5] loss: 0.003
+[Epoch 34, Batch    10] loss: 0.003
+[Epoch 34, Batch    15] loss: 0.003
+[Epoch 34, Batch    20] loss: 0.003
+[Epoch 34, Batch    25] loss: 0.003
+[Epoch 34, Batch    30] loss: 0.002
+
+Val Epoch: 34
+41.67-83.33-125.00-VAL: 34 loss: 0.143
+Overall acc  = 0.880, MPCA = 0.691, mIOU = 0.544
+
+Train Epoch: 35
+[Epoch 35, Batch     5] loss: 0.002
+[Epoch 35, Batch    10] loss: 0.003
+[Epoch 35, Batch    15] loss: 0.003
+[Epoch 35, Batch    20] loss: 0.002
+[Epoch 35, Batch    25] loss: 0.002
+[Epoch 35, Batch    30] loss: 0.002
+
+Val Epoch: 35
+41.67-83.33-125.00-VAL: 35 loss: 0.163
+Overall acc  = 0.886, MPCA = 0.669, mIOU = 0.553
+
+Train Epoch: 36
+[Epoch 36, Batch     5] loss: 0.002
+[Epoch 36, Batch    10] loss: 0.002
+[Epoch 36, Batch    15] loss: 0.002
+[Epoch 36, Batch    20] loss: 0.002
+[Epoch 36, Batch    25] loss: 0.003
+[Epoch 36, Batch    30] loss: 0.002
+
+Val Epoch: 36
+41.67-83.33-125.00-VAL: 36 loss: 0.144
+Overall acc  = 0.880, MPCA = 0.691, mIOU = 0.546
+
+Train Epoch: 37
+[Epoch 37, Batch     5] loss: 0.003
+[Epoch 37, Batch    10] loss: 0.009
+[Epoch 37, Batch    15] loss: 0.003
+[Epoch 37, Batch    20] loss: 0.005
+[Epoch 37, Batch    25] loss: 0.004
+[Epoch 37, Batch    30] loss: 0.003
+
+Val Epoch: 37
+41.67-83.33-125.00-VAL: 37 loss: 0.113
+Overall acc  = 0.884, MPCA = 0.670, mIOU = 0.554
+
+Train Epoch: 38
+[Epoch 38, Batch     5] loss: 0.004
+[Epoch 38, Batch    10] loss: 0.006
+[Epoch 38, Batch    15] loss: 0.004
+[Epoch 38, Batch    20] loss: 0.003
+[Epoch 38, Batch    25] loss: 0.002
+[Epoch 38, Batch    30] loss: 0.002
+
+Val Epoch: 38
+41.67-83.33-125.00-VAL: 38 loss: 0.114
+Overall acc  = 0.882, MPCA = 0.706, mIOU = 0.563
+
+Train Epoch: 39
+[Epoch 39, Batch     5] loss: 0.003
+[Epoch 39, Batch    10] loss: 0.002
+[Epoch 39, Batch    15] loss: 0.003
+[Epoch 39, Batch    20] loss: 0.003
+[Epoch 39, Batch    25] loss: 0.002
+[Epoch 39, Batch    30] loss: 0.002
+
+Val Epoch: 39
+41.67-83.33-125.00-VAL: 39 loss: 0.162
+Overall acc  = 0.888, MPCA = 0.683, mIOU = 0.563
+
+Train Epoch: 40
+[Epoch 40, Batch     5] loss: 0.003
+[Epoch 40, Batch    10] loss: 0.002
+[Epoch 40, Batch    15] loss: 0.002
+[Epoch 40, Batch    20] loss: 0.002
+[Epoch 40, Batch    25] loss: 0.002
+[Epoch 40, Batch    30] loss: 0.002
+
+Val Epoch: 40
+41.67-83.33-125.00-VAL: 40 loss: 0.165
+Overall acc  = 0.884, MPCA = 0.677, mIOU = 0.552
+
+Train Epoch: 41
+[Epoch 41, Batch     5] loss: 0.002
+[Epoch 41, Batch    10] loss: 0.002
+[Epoch 41, Batch    15] loss: 0.002
+[Epoch 41, Batch    20] loss: 0.002
+[Epoch 41, Batch    25] loss: 0.002
+[Epoch 41, Batch    30] loss: 0.002
+
+Val Epoch: 41
+41.67-83.33-125.00-VAL: 41 loss: 0.176
+Overall acc  = 0.886, MPCA = 0.682, mIOU = 0.556
+
+Train Epoch: 42
+[Epoch 42, Batch     5] loss: 0.002
+[Epoch 42, Batch    10] loss: 0.002
+[Epoch 42, Batch    15] loss: 0.002
+[Epoch 42, Batch    20] loss: 0.002
+[Epoch 42, Batch    25] loss: 0.003
+[Epoch 42, Batch    30] loss: 0.002
+
+Val Epoch: 42
+41.67-83.33-125.00-VAL: 42 loss: 0.157
+Overall acc  = 0.885, MPCA = 0.681, mIOU = 0.553
+
+Train Epoch: 43
+[Epoch 43, Batch     5] loss: 0.002
+[Epoch 43, Batch    10] loss: 0.002
+[Epoch 43, Batch    15] loss: 0.002
+[Epoch 43, Batch    20] loss: 0.002
+[Epoch 43, Batch    25] loss: 0.002
+[Epoch 43, Batch    30] loss: 0.002
+
+Val Epoch: 43
+41.67-83.33-125.00-VAL: 43 loss: 0.151
+Overall acc  = 0.885, MPCA = 0.681, mIOU = 0.555
+
+Train Epoch: 44
+[Epoch 44, Batch     5] loss: 0.002
+[Epoch 44, Batch    10] loss: 0.002
+[Epoch 44, Batch    15] loss: 0.002
+[Epoch 44, Batch    20] loss: 0.002
+[Epoch 44, Batch    25] loss: 0.002
+[Epoch 44, Batch    30] loss: 0.002
+
+Val Epoch: 44
+41.67-83.33-125.00-VAL: 44 loss: 0.158
+Overall acc  = 0.885, MPCA = 0.679, mIOU = 0.553
+
+Train Epoch: 45
+[Epoch 45, Batch     5] loss: 0.002
+[Epoch 45, Batch    10] loss: 0.002
+[Epoch 45, Batch    15] loss: 0.002
+[Epoch 45, Batch    20] loss: 0.002
+[Epoch 45, Batch    25] loss: 0.002
+[Epoch 45, Batch    30] loss: 0.002
+
+Val Epoch: 45
+41.67-83.33-125.00-VAL: 45 loss: 0.162
+Overall acc  = 0.886, MPCA = 0.681, mIOU = 0.555
+
+Train Epoch: 46
+[Epoch 46, Batch     5] loss: 0.002
+[Epoch 46, Batch    10] loss: 0.002
+[Epoch 46, Batch    15] loss: 0.002
+[Epoch 46, Batch    20] loss: 0.002
+[Epoch 46, Batch    25] loss: 0.002
+[Epoch 46, Batch    30] loss: 0.002
+
+Val Epoch: 46
+41.67-83.33-125.00-VAL: 46 loss: 0.171
+Overall acc  = 0.886, MPCA = 0.682, mIOU = 0.557
+
+Train Epoch: 47
+[Epoch 47, Batch     5] loss: 0.002
+[Epoch 47, Batch    10] loss: 0.002
+[Epoch 47, Batch    15] loss: 0.002
+[Epoch 47, Batch    20] loss: 0.002
+[Epoch 47, Batch    25] loss: 0.002
+[Epoch 47, Batch    30] loss: 0.002
+
+Val Epoch: 47
+41.67-83.33-125.00-VAL: 47 loss: 0.157
+Overall acc  = 0.885, MPCA = 0.681, mIOU = 0.554
+
+Train Epoch: 48
+[Epoch 48, Batch     5] loss: 0.002
+[Epoch 48, Batch    10] loss: 0.002
+[Epoch 48, Batch    15] loss: 0.002
+[Epoch 48, Batch    20] loss: 0.001
+[Epoch 48, Batch    25] loss: 0.002
+[Epoch 48, Batch    30] loss: 0.002
+
+Val Epoch: 48
+41.67-83.33-125.00-VAL: 48 loss: 0.157
+Overall acc  = 0.884, MPCA = 0.687, mIOU = 0.553
+
+Train Epoch: 49
+[Epoch 49, Batch     5] loss: 0.002
+[Epoch 49, Batch    10] loss: 0.002
+[Epoch 49, Batch    15] loss: 0.002
+[Epoch 49, Batch    20] loss: 0.002
+[Epoch 49, Batch    25] loss: 0.002
+[Epoch 49, Batch    30] loss: 0.002
+
+Val Epoch: 49
+41.67-83.33-125.00-VAL: 49 loss: 0.171
+Overall acc  = 0.886, MPCA = 0.680, mIOU = 0.559
+
+Train Epoch: 50
+[Epoch 50, Batch     5] loss: 0.002
+[Epoch 50, Batch    10] loss: 0.002
+[Epoch 50, Batch    15] loss: 0.002
+[Epoch 50, Batch    20] loss: 0.002
+[Epoch 50, Batch    25] loss: 0.002
+[Epoch 50, Batch    30] loss: 0.002
+
+Val Epoch: 50
+41.67-83.33-125.00-VAL: 50 loss: 0.167
+Overall acc  = 0.884, MPCA = 0.680, mIOU = 0.550
+
+Train Epoch: 51
+[Epoch 51, Batch     5] loss: 0.002
+[Epoch 51, Batch    10] loss: 0.002
+[Epoch 51, Batch    15] loss: 0.002
+[Epoch 51, Batch    20] loss: 0.002
+[Epoch 51, Batch    25] loss: 0.001
+[Epoch 51, Batch    30] loss: 0.002
+
+Val Epoch: 51
+41.67-83.33-125.00-VAL: 51 loss: 0.176
+Overall acc  = 0.885, MPCA = 0.682, mIOU = 0.552
+
+Train Epoch: 52
+[Epoch 52, Batch     5] loss: 0.002
+[Epoch 52, Batch    10] loss: 0.001
+[Epoch 52, Batch    15] loss: 0.002
+[Epoch 52, Batch    20] loss: 0.001
+[Epoch 52, Batch    25] loss: 0.002
+[Epoch 52, Batch    30] loss: 0.002
+
+Val Epoch: 52
+41.67-83.33-125.00-VAL: 52 loss: 0.171
+Overall acc  = 0.885, MPCA = 0.681, mIOU = 0.553
+
+Train Epoch: 53
+[Epoch 53, Batch     5] loss: 0.002
+[Epoch 53, Batch    10] loss: 0.002
+[Epoch 53, Batch    15] loss: 0.002
+[Epoch 53, Batch    20] loss: 0.002
+[Epoch 53, Batch    25] loss: 0.002
+[Epoch 53, Batch    30] loss: 0.002
+
+Val Epoch: 53
+41.67-83.33-125.00-VAL: 53 loss: 0.170
+Overall acc  = 0.885, MPCA = 0.682, mIOU = 0.552
+
+Train Epoch: 54
+[Epoch 54, Batch     5] loss: 0.001
+[Epoch 54, Batch    10] loss: 0.001
+[Epoch 54, Batch    15] loss: 0.002
+[Epoch 54, Batch    20] loss: 0.002
+[Epoch 54, Batch    25] loss: 0.002
+[Epoch 54, Batch    30] loss: 0.002
+
+Val Epoch: 54
+41.67-83.33-125.00-VAL: 54 loss: 0.175
+Overall acc  = 0.886, MPCA = 0.681, mIOU = 0.556
+
+Train Epoch: 55
+[Epoch 55, Batch     5] loss: 0.002
+[Epoch 55, Batch    10] loss: 0.002
+[Epoch 55, Batch    15] loss: 0.002
+[Epoch 55, Batch    20] loss: 0.002
+[Epoch 55, Batch    25] loss: 0.002
+[Epoch 55, Batch    30] loss: 0.002
+
+Val Epoch: 55
+41.67-83.33-125.00-VAL: 55 loss: 0.169
+Overall acc  = 0.885, MPCA = 0.681, mIOU = 0.553
+
+Train Epoch: 56
+[Epoch 56, Batch     5] loss: 0.002
+[Epoch 56, Batch    10] loss: 0.002
+[Epoch 56, Batch    15] loss: 0.002
+[Epoch 56, Batch    20] loss: 0.001
+[Epoch 56, Batch    25] loss: 0.002
+[Epoch 56, Batch    30] loss: 0.002
+
+Val Epoch: 56
+41.67-83.33-125.00-VAL: 56 loss: 0.183
+Overall acc  = 0.886, MPCA = 0.679, mIOU = 0.555
+
+Train Epoch: 57
+[Epoch 57, Batch     5] loss: 0.002
+[Epoch 57, Batch    10] loss: 0.002
+[Epoch 57, Batch    15] loss: 0.003
+[Epoch 57, Batch    20] loss: 0.002
+[Epoch 57, Batch    25] loss: 0.002
+[Epoch 57, Batch    30] loss: 0.002
+
+Val Epoch: 57
+41.67-83.33-125.00-VAL: 57 loss: 0.162
+Overall acc  = 0.885, MPCA = 0.679, mIOU = 0.554
+
+Train Epoch: 58
+[Epoch 58, Batch     5] loss: 0.003
+[Epoch 58, Batch    10] loss: 0.002
+[Epoch 58, Batch    15] loss: 0.002
+[Epoch 58, Batch    20] loss: 0.002
+[Epoch 58, Batch    25] loss: 0.002
+[Epoch 58, Batch    30] loss: 0.002
+
+Val Epoch: 58
+41.67-83.33-125.00-VAL: 58 loss: 0.170
+Overall acc  = 0.886, MPCA = 0.680, mIOU = 0.555
+
+Train Epoch: 59
+[Epoch 59, Batch     5] loss: 0.001
+[Epoch 59, Batch    10] loss: 0.003
+[Epoch 59, Batch    15] loss: 0.002
+[Epoch 59, Batch    20] loss: 0.002
+[Epoch 59, Batch    25] loss: 0.002
+[Epoch 59, Batch    30] loss: 0.002
+
+Val Epoch: 59
+41.67-83.33-125.00-VAL: 59 loss: 0.167
+Overall acc  = 0.885, MPCA = 0.679, mIOU = 0.554
+
+Train Epoch: 60
+[Epoch 60, Batch     5] loss: 0.001
+[Epoch 60, Batch    10] loss: 0.002
+[Epoch 60, Batch    15] loss: 0.002
+[Epoch 60, Batch    20] loss: 0.002
+[Epoch 60, Batch    25] loss: 0.002
+[Epoch 60, Batch    30] loss: 0.002
+
+Val Epoch: 60
+41.67-83.33-125.00-VAL: 60 loss: 0.167
+Overall acc  = 0.887, MPCA = 0.681, mIOU = 0.559
+Time elapsed 0:30:19.314307
