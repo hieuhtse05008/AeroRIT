@@ -59,7 +59,7 @@ fig.add_subplot(144)
 plt.imshow(train_gt)
 plt.title("Train ground truth")
 plt.show()
-
+plt.savefig('./output_images/components.png')
 
 
 
@@ -374,6 +374,7 @@ for it in tqdm(range(100000)):
             plot_mean_std(samples)
             plt.title("Samples for class {}".format(idx))
             plt.show()
+            plt.savefig("./output_images/Samples for class {}.png".format(idx))
 
 
 # ## Data generation
@@ -392,6 +393,7 @@ for c in np.unique(gt):
     spectras = img[gt == c, :]
     plot_mean_std(spectras)
     plt.title("Real {}".format(c))
+    plt.savefig("./output_images/Real {}.png".format(c))
     plt.show()
     
     # Get as many fake spectras as real ones
@@ -408,6 +410,7 @@ for c in np.unique(gt):
     plt.show()
     plot_mean_std(synthetic_spectras)
     plt.title("Synthetic {}".format(c))
+    plt.savefig("./output_images/Synthetic {}.png".format(c))
     plt.show()
 
 
