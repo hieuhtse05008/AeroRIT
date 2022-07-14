@@ -7,3 +7,5 @@ __pycache__/
 Aerial Data
 savedmodels
 .idea
+GAN/output_images/*.tif
+GAN/output_images/*.tif
